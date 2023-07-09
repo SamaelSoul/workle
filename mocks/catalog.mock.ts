@@ -18,4 +18,4 @@ export const catalogData: CatalogItems = [
     },
 ]
 
-export const fetchCatalogMock = async (): CatalogItems => Promise.resolve(catalogData)
+export const fetchCatalogMock = async (): Promise<CatalogItems> => Promise.resolve(catalogData)
