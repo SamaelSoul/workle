@@ -120,7 +120,7 @@ export const showcases: ShowcaseList = [
 export const fetchShowcasesData = (category: CategoryShowcase): Promise<ShowcaseList> => {
   if (category === 'all') return Promise.resolve(showcases)
 
-  const showcaseResult = showcases.filter(showcase => showcase.category !== category)
+  const showcaseResult = showcases.filter(showcase => showcase.category === category)
 
   return Promise.resolve(showcaseResult)
 }

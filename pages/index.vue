@@ -12,10 +12,10 @@
 
 <script lang="ts">
     import { defineComponent, ref, useContext, watch } from '@nuxtjs/composition-api'
-    
+
     import MainLayout from '@/layouts/main.vue'
     import ShowcaseList from '@/components/showcase-list.vue'
-    
+
     import { CategoryShowcase } from '@/interfaces/showcase.interface'
 
     export default defineComponent({
@@ -31,8 +31,10 @@
         watch(
           () => route.value.query.category,
           () => {
-            console.log(route.value.query.category)
-            if (!route.value.query.category) return
+            if (!route.value.query.category) {
+              category.value = 'all';
+              return;
+            }
 
             category.value = route.value.query.category as CategoryShowcase
           },
